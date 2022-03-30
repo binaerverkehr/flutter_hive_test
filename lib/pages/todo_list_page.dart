@@ -75,7 +75,7 @@ class TodoListPage extends StatelessWidget {
                   title: Text(currentTodo.title),
                   value: currentTodo.completed,
                   onChanged: (newValue) {
-                    box.putAt(index, Todo(title: currentTodo.title, completed: !currentTodo.completed));
+                    box.putAt(index, Todo(title: currentTodo.title, completed: newValue ?? !currentTodo.completed));
                   },
                 ),
               );
