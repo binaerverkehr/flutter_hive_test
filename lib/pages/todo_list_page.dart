@@ -48,7 +48,7 @@ class TodoListPage extends StatelessWidget {
                               children: [
                                 ElevatedButton(
                                     onPressed: () {
-                                      currentTodo.delete();
+                                      box.deleteAt(index);
 
                                       _todoTitleController.clear();
                                       Navigator.pop(context);
@@ -58,7 +58,7 @@ class TodoListPage extends StatelessWidget {
                                 ElevatedButton(
                                   onPressed: () {
                                     //* Get todo index from list
-                                    box.put(index,
+                                    box.putAt(index,
                                         Todo(title: _todoTitleController.text, completed: currentTodo.completed));
                                     _todoTitleController.clear();
                                     Navigator.pop(context);
@@ -75,7 +75,7 @@ class TodoListPage extends StatelessWidget {
                   title: Text(currentTodo.title),
                   value: currentTodo.completed,
                   onChanged: (newValue) {
-                    box.put(index, Todo(title: currentTodo.title, completed: !currentTodo.completed));
+                    box.putAt(index, Todo(title: currentTodo.title, completed: !currentTodo.completed));
                   },
                 ),
               );
